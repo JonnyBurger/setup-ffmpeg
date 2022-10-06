@@ -70,6 +70,8 @@ async function main() {
     core.setOutput("path", installPath);
     core.setOutput("ffmpeg-path", ffmpegPath);
     core.setOutput("ffprobe-path", ffprobePath);
+
+    fs.unlinkSync(ffmpegPath);
   } catch (error) {
     core.setFailed(`${error.message}`);
   }

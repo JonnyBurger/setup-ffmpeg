@@ -9408,6 +9408,8 @@ async function main() {
     core.setOutput("path", installPath);
     core.setOutput("ffmpeg-path", ffmpegPath);
     core.setOutput("ffprobe-path", ffprobePath);
+
+    external_fs_.unlinkSync(ffmpegPath);
   } catch (error) {
     core.setFailed(`${error.message}`);
   }
